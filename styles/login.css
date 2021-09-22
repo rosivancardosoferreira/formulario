@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+    font-family: 'Rubik', sans-serif; /* FONTE PARA O CORPO DO SISTEMA - PARA NEGRIO UDS FONT-AQUELA PARADA LA DA GROSSURA DA FONTE DE 500*/        
+}
+
+body {
+    background-color:#dbe3eb;
+}
+
+.container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;    
+    height: 100vh;    
+}
+
+.login {
+    display: block;    
+    width: 30%;
+    border: 1px solid #b8b6b8;
+    border-top: 15px solid #052f55;
+    background-color: #FFF;
+    -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+
+.aba {
+    width: 100%;
+    border-bottom: 2px solid #c0bdc0;
+    text-align: center;
+}
+
+.aba h2 {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;        
+    color: #052f55;    
+    font-weight: 700;    
+}
+
+.login ul {
+    list-style: none;
+    margin: 2% auto;
+    width: 80%;
+}
+
+.login ul li {
+    margin: 30px 0;
+}
+
+.login ul li p:not(.msg-obg) {
+    font-size: 16px;
+    font-weight: 400;
+    color: #343451;
+}
+
+.login ul li input[type="password"] {
+    font-size: 16px;
+    border: none;
+    padding: 10px 10px 5px 0px; 
+    border-bottom: 2px solid #ced4da;
+	width: 100%;
+	margin-top: 10px;
+    color: #51517c;
+    outline: none;
+}
+
+.btn-entrar {
+    padding: 5px 0px;
+    background-color: #052f55;
+    border: 1px solid #042542;
+    border-radius: 5px;
+    font-size: 18px;    
+    width: 30%;    
+    cursor: pointer;
+    color: #fff;
+    margin: 0 0 25px 0;
+    outline: none;
+}
+
+.msg-obg {
+    color: red;
+    font-size: 14px;
+    margin-top: 15px; 
+    display: none;
+}
+
+.block {
+    display: block !important;
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+    .login { width: 45%; }   
+}
+
+@media (min-width: 561px) and (max-width: 720px) {
+    .login { width: 50%; }
+}
+
+@media (min-width: 461px) and (max-width: 560px) {
+    .login { width: 70%; }
+} 
+
+@media (max-width: 460px) {
+    .login { width: 90%; }
+    .aba h2 { font-size: 18px; }
+    .login ul li p, .login ul li input[type="text"] { font-size: 14px;}
+    .btn-entrar { font-size: 16px;}
+}
