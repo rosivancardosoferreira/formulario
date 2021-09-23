@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;    
     font-family: 'Rubik', sans-serif; /* FONTE PARA O CORPO DO SISTEMA - PARA NEGRIO UDS FONT-AQUELA PARADA LA DA GROSSURA DA FONTE DE 500*/           
+    outline: none;
 }
 
 body {
@@ -116,10 +117,20 @@ body {
   font-weight: 400;
 }
 
+.inscricao ul li span {
+  display: block;
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3e3e5f;
+}
+
 .inscricao li strong{
     display: block;
     font-size: 18px;
-    color: #d14;    
+    /* color: #d14; */
+    color: #042542;
     padding-bottom: 20px;
 }
 
@@ -133,8 +144,18 @@ body {
   	padding: 10px 10px 5px 0px;  	
   	border: none;
   	border-bottom: 2px solid #ced4da;
-	width: 60%;
-	margin-top: 10px;
+    width: 60%;
+    margin-top: 10px;    
+}
+
+.inscricao ul li textarea {
+  padding: 10px 10px 5px;  	
+  border: 1px solid #ced4da;
+  width: 60%;
+  margin-top: 10px;
+  height: 150px;
+  outline: none;
+  resize: none;
 }
 
 .inscricao ul li select {
@@ -149,11 +170,11 @@ body {
     font-weight: 400;
 }
 
-.inscricao ul li input[type="text"]:focus {
+.inscricao ul li input[type="text"]:focus, .inscricao ul li textarea:focus {
     -moz-transition: all .8s ease-out;	
     -webkit-transition: all .8s ease-out;
-	-o-transition: all .8s ease-out;
-	transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
     border-bottom: 2px solid #042542;
     outline: none;
 }
