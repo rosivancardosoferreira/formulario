@@ -3,7 +3,59 @@ session_start();
 include('../server/scriptServer.php');
 $conn = getConnection();
 if(isset($_POST['btn_enviar'])) {
-    $sql = 'INSERT INTO tb_atividade (cod_atividade, cod_data_hora, numero_participantes, palestrante1_nome, palestrante1_instituicao, palestrante1_titulacao, palestrante1_e_mail, palestrante1_celular, palestrante2_nome, palestrante2_instituicao, palestrante2_titulacao, palestrante2_e_mail, palestrante2_celular, palestrante3_nome, palestrante3_instituicao, palestrante3_titulacao, palestrante3_e_mail, palestrante3_celular, palestrante4_nome, palestrante4_instituicao, palestrante4_titulacao, palestrante4_e_mail, palestrante4_celular, titulo, area_conhecimento, tipo_atividade, sugestao_data_horario, mensagem) VALUES (?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?,   ?)';
+    $sql = 'INSERT INTO tb_atividade (
+        cod_atividade,
+        cod_data_hora,
+        numero_participantes,
+        palestrante1_nome,
+        palestrante1_instituicao,
+        palestrante1_titulacao,
+        palestrante1_e_mail,
+        palestrante1_celular,
+        palestrante2_nome,
+        palestrante2_instituicao,
+        palestrante2_titulacao,
+        palestrante2_e_mail,
+        palestrante2_celular,
+        palestrante3_nome,
+        palestrante3_instituicao,
+        palestrante3_titulacao,
+        palestrante3_e_mail,
+        palestrante3_celular,
+        palestrante4_nome,
+        palestrante4_instituicao,
+        palestrante4_titulacao,
+        palestrante4_e_mail,
+        palestrante4_celular,
+        titulo,
+        resumo,
+        area_conhecimento,
+        tipo_atividade,
+        sugestao_data_horario,
+        mensagem,
+
+        aeroespacial_e_defesa,
+        agua,
+        alimentos,
+        biomas_e_bioeconomia,
+        ciencias_e_tecnologias_sociais,
+        clima,
+        economia_e_sociedade_digital,
+        energia,
+        minerais_estrategicos,
+        nuclear,
+        saude,
+        tecnologias_convergentes_e_habilitadoras
+        ) VALUES (
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?,
+            ?)';
     adicionarDados($sql, $conn);
 } else {        
     $_SESSION['inserir'] = 'Algo deu errado, preencha a formulário novamente.';
@@ -67,13 +119,25 @@ function adicionarDados($sql, $conn) {
     $palestrante4_celular = strlen($_POST['palestrante4_celular']) < 100? $_POST['palestrante4_celular'] : substr($_POST['palestrante4_celular'], 0, 99);
     
     $titulo = strlen($_POST['titulo']) < 100? $_POST['titulo'] : substr($_POST['titulo'], 0, 99);
+    $resumo = $_POST['titulo']; //NOVO CAMPO
     $area_conhecimento = strlen($_POST['area_conhecimento']) < 100? $_POST['area_conhecimento'] : substr($_POST['area_conhecimento'], 0, 99);
     $tipo_atividade = strlen($_POST['tipo_atividade']) < 100? $_POST['tipo_atividade'] : substr($_POST['tipo_atividade'], 0, 99);
-
-
-
     $sugestao_data_horario = strlen($_POST['sugestao_data_horario']) < 100? $_POST['sugestao_data_horario'] : substr($_POST['sugestao_data_horario'], 0, 99);
     $mensagem  = strlen($_POST['mensagem']) < 100? $_POST['mensagem'] : substr($_POST['mensagem'], 0, 99);
+
+    //NOVOS
+    $aeroespacial_e_defesa = isset($_POST['aeroespacial_e_defesa']) ? true : false;
+    $agua = isset($_POST['agua']) ? true : false;
+    $alimentos = isset($_POST['alimentos']) ? true : false;
+    $biomas_e_bioeconomia = isset($_POST['biomas_e_bioeconomia']) ? true : false;
+    $ciencias_e_tecnologias_sociais = isset($_POST['ciencias_e_tecnologias_sociais']) ? true : false;
+    $clima = isset($_POST['clima']) ? true : false;
+    $economia_e_sociedade_digital = isset($_POST['economia_e_sociedade_digital']) ? true : false;
+    $energia = isset($_POST['energia']) ? true : false;
+    $minerais_estrategicos = isset($_POST['minerais_estrategicos']) ? true : false;
+    $nuclear = isset($_POST['nuclear']) ? true : false;
+    $saude = isset($_POST['saude']) ? true : false;
+    $tecnologias_convergentes_e_habilitadoras = isset($_POST['tecnologias_convergentes_e_habilitadoras']) ? true : false;
 
     // TESTES DE IMPRESSOES
     // echo 'cod_atividade: '.$cod_atividade.'<br>';
@@ -110,6 +174,9 @@ function adicionarDados($sql, $conn) {
     // echo 'mensagem : '.$mensagem .'<br>';
     // FIM TESTE DE IMPRESSORES
 
+    echo $resumo;
+    return;
+
     $stmt = $conn->prepare($sql);
     $stmt->bindValue(1, $cod_atividade);
     $stmt->bindValue(2, $cod_data_hora);
@@ -135,10 +202,23 @@ function adicionarDados($sql, $conn) {
     $stmt->bindValue(22, $palestrante4_e_mail);
     $stmt->bindValue(23, $palestrante4_celular);
     $stmt->bindValue(24, $titulo);
-    $stmt->bindValue(25, $area_conhecimento);
-    $stmt->bindValue(26, $tipo_atividade);
-    $stmt->bindValue(27, $sugestao_data_horario);
-    $stmt->bindValue(28, $mensagem);
+    $stmt->bindValue(25, $resumo);    
+    $stmt->bindValue(26, $area_conhecimento);
+    $stmt->bindValue(27, $tipo_atividade);
+    $stmt->bindValue(28, $sugestao_data_horario);
+    $stmt->bindValue(29, $mensagem);
+    $stmt->bindValue(30, $aeroespacial_e_defesa);
+    $stmt->bindValue(31, $agua);
+    $stmt->bindValue(32, $alimentos);
+    $stmt->bindValue(33, $biomas_e_bioeconomia);
+    $stmt->bindValue(34, $ciencias_e_tecnologias_sociais);
+    $stmt->bindValue(35, $clima);
+    $stmt->bindValue(36, $economia_e_sociedade_digital);
+    $stmt->bindValue(37, $energia);
+    $stmt->bindValue(38, $minerais_estrategicos);
+    $stmt->bindValue(39, $nuclear);
+    $stmt->bindValue(40, $saude);
+    $stmt->bindValue(41, $tecnologias_convergentes_e_habilitadoras);
     
         if($stmt->execute()){
             // echo 'sucesso';            

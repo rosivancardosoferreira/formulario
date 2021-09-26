@@ -64,8 +64,7 @@
                     <li>
                         <strong>Dados do(s) Palestrante(s)</strong>
                         <p>Número de Palestrantes</p>
-                        <select name="numero_participantes" id="numero-palestrantes"
-                            class="select-numero-participantes">
+                        <select name="numero_participantes" id="numero-palestrantes" class="select-numero-participantes">
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -237,23 +236,66 @@
                             <p>Temas estratégicos desse ano</p>
                             <span>Agregando-se às perspectivas nacionais e internacionais, o Ministério da Ciência, Tecnologia e Inovações (MCTI) considera o tema da transversalidade da ciência, tecnologia e inovações como estratégico e oportuno aos novos planejamentos e principalmente à reflexão sobre o momento em que vivemos, e o que desejamos para o futuro. Atualmente, são 12 temas estratégicos previstos na ENCTI 2016-2022 que demandam ações transversais de CT&I:</span>
                         </div>
-                        <select name="temas_estrategicos" id="">
-                            <option value="" selected="selected">Selecione</option>
-                            <option value="Aeroespacial e defesa">Aeroespacial e defesa</option>
-                            <option value="Água">Água</option>
-                            <option value="Alimentos">Alimentos</option>
-                            <option value="Biomas e Bioeconomia">Biomas e Bioeconomia</option>
-                            <option value="Ciências e Tecnologias Sociais">Ciências e Tecnologias Sociais</option>
-                            <option value="Clima">Clima</option>
-                            <option value="Economia e Sociedade Digital">Economia e Sociedade Digital</option>
-                            <option value="Energia">Energia</option>
-                            <option value="Minerais Estratégicos">Minerais Estratégicos</option>
-                            <option value="Nuclear">Nuclear</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Tecnologias Convergentes e Habilitadoras">Tecnologias Convergentes e Habilitadoras</option>
-                            <option value="nao se aplica">Não se aplica</option>
-                        </select>
-                        <p class="msg-obg-selects">* Campo obrigsasatório</p>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="aeroespacial_e_defesa" id="aeroespacial_e_defesa">
+                            <label for="aeroespacial_e_defesa">Aeroespacial e defesa</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="agua" id="agua">
+                            <label for="agua">Água</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="alimentos" id="alimentos">
+                            <label for="alimentos">Alimentos</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="biomas_e_bioeconomia" id="biomas_e_bioeconomia">
+                            <label for="biomas_e_bioeconomia">Biomas e Bioeconomia</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="ciencias_e_tecnologias_sociais" id="ciencias_e_tecnologias_sociais">
+                            <label for="ciencias_e_tecnologias_sociais">Ciências e Tecnologias Sociais</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="clima" id="clima">
+                            <label for="clima">Clima</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="economia_e_sociedade_digital" id="economia_e_sociedade_digital">
+                            <label for="economia_e_sociedade_digital">Economia e Sociedade Digital</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="energia" id="energia">
+                            <label for="energia">Energia</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="minerais_estrategicos" id="minerais_estrategicos">
+                            <label for="minerais_estrategicos">Minerais Estratégicos</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="nuclear" id="nuclear">
+                            <label for="nuclear">Nuclear</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="saude" id="saude">
+                            <label for="saude">Saúde</label>
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="tecnologias_convergentes_e_habilitadoras" id="tecnologias_convergentes_e_habilitadoras">
+                            <label for="tecnologias_convergentes_e_habilitadoras">Tecnologias Convergentes e Habilitadoras</label>
+                        </div>
                     </li>
 
                     <li>
@@ -264,9 +306,9 @@
 
                     <li>
                         <p>Resumo (Máximo 500 caracteres)</p>
-                        <textarea name="" id="" maxlength="500"></textarea>
-                        <p class="msg-obg-selects">* Campo obrigatório</p>
-                    </li>                    
+                        <textarea name="resumo" id="" class="campo-obg" maxlength="500"></textarea>
+                        <p class="msg-obg">* Campo obrigatório</p>
+                    </li>
 
                     <li>
                         <p>Tipo de Atividade</p>
@@ -278,7 +320,7 @@
                             <option value="IC">Projeto de Iniciação Científica</option>
                             <option value="TCC">Trabalho de Conclusão de Curso</option>
                         </select>
-                        <p class="msg-obg-selects">* Campo obrigsasatório</p>
+                        <p class="msg-obg-selects">* Campo obrigatório</p>
                     </li>
 
                     <li>

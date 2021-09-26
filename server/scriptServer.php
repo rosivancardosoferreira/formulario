@@ -10,9 +10,13 @@
 
 		try {
 			$pdo = new PDO($dns, $user, $pass); //Conectado						
+			echo "sucess";
 			return $pdo;
 		}catch (PDOException $ex){
+			echo $ex;
 			echo 'Algo deu errado, tente novamente mais tarde.';			
 		}
 	}	
+
+	getConnection();
 ?>

@@ -221,10 +221,59 @@ body {
 }
 
 .inscricao input[type="radio"]:checked + label:before {
-	background-color: #052f55;
+	background-color: #171718;
 	border-color: #042542;
 	color: #fff;
 }
+
+.inscricao .checkbox{
+  margin-top: 1rem;
+}
+
+.inscricao .checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.inscricao .checkbox label {
+  color: #171718;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.inscricao .checkbox input[type="checkbox"]+label {
+  display: block;
+  min-width: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inscricao .checkbox input[type="checkbox"]+label:before {
+  content: "\2714";
+  border: 1px solid #042542;
+  border-radius: 5px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  padding-left: 0.1em;
+  padding-bottom: 0.2em;
+  margin-right: 5px;
+  color: transparent;
+  transition: 0.2s;
+}
+
+.inscricao .checkbox input[type="checkbox"]+label:active:before {
+  transform: scale(0);
+}
+
+.inscricao .checkbox input[type="checkbox"]:checked+label:before {
+  background-color: blue;
+  border: 1px solid blue;
+  color: #fff;
+}
+
+
 
 .msg-obg, .msg-obg-selects {
     color: red;
